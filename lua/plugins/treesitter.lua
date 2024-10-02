@@ -17,6 +17,7 @@ return {
 			indent = { enable = true },
 			ensure_installed = {
 				"lua",
+				"vim",
 			},
 			modules = {},
 			sync_install = false,

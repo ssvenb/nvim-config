@@ -18,13 +18,13 @@ return {
 				"html",
 				"lua_ls",
 				"yamlls",
+				"pylsp",
 			},
 		})
 		require("mason-tool-installer").setup({
 			ensure_installed = {
-				"black",
-				"isort",
 				"stylua",
+				"black",
 			},
 		})
 		local lspconfig = require("lspconfig")
