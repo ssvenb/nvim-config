@@ -8,9 +8,10 @@ return {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig",
 		"WhoIsSethDaniel/mason-tool-installer",
+		"nvimtools/none-ls.nvim",
 	},
 	config = function()
-		require("mason").setup()
+		require("mason").setup({})
 		require("mason-lspconfig").setup({
 			ensure_installed = {
 				"bashls",
@@ -25,8 +26,10 @@ return {
 			ensure_installed = {
 				"stylua",
 				"black",
+				"prettier",
 			},
 		})
+		vim.cmd("MasonToolsInstall")
 		local lspconfig = require("lspconfig")
 		local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 		require("mason-lspconfig").setup_handlers({
@@ -34,6 +37,29 @@ return {
 				lspconfig[server_name].setup({
 					capabilities = lsp_capabilities,
 				})
+			end,
+		})
+		local null_ls = require("null-ls")
+		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+		null_ls.setup({
+			sources = {
+				null_ls.builtins.formatting.stylua,
+				null_ls.builtins.formatting.black,
+				null_ls.builtins.formatting.prettier,
+			},
+			on_attach = function(client, bufnr)
+				if client.supports_method("textDocument/formatting") then
+					vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						group = augroup,
+						buffer = bufnr,
+						callback = function()
+							-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+							-- on later neovim version, you should use vim.lsp.buf.format({ async = false }) instead
+							vim.lsp.buf.format({ async = false })
+						end,
+					})
+				end
 			end,
 		})
 
