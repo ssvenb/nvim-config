@@ -16,6 +16,7 @@ vim.opt.incsearch = true
 vim.opt.hlsearch = true
 
 vim.opt.iskeyword:append("-")
+vim.cmd("set noshowmode")
 
 vim.keymap.set("n", "<left>", "<<")
 vim.keymap.set("n", "<right>", ">>")
