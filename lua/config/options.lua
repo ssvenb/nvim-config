@@ -14,6 +14,7 @@ vim.opt.wrap = false
 
 vim.opt.incsearch = true
 vim.opt.hlsearch = true
+vim.opt.cursorline = true
 
 vim.opt.iskeyword:append("-")
 vim.cmd("set noshowmode")
