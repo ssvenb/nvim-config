@@ -1,3 +1,2 @@
-require("config.options")
-require("config.globals")
-require("config.lazy")
+require("core.config")
+require("core.lazy")
