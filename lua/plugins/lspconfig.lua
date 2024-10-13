@@ -1,5 +1,8 @@
 vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.declaration()<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "grs", "<cmd>lua vim.lsp.buf.rename()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { noremap = true, silent = true })
 
 vim.diagnostic.config({
     virtual_text = false,
@@ -49,7 +52,6 @@ return {
                     settings = {
                         Lua = {
                             diagnostics = {
-                                -- Get the language server to recognize the `vim` global
                                 globals = { "vim" },
                             },
                         },

@@ -16,8 +16,8 @@ vim.cmd("set noshowmode")
 -- Copy Paste
 vim.opt.clipboard = "unnamedplus"
 vim.opt.iskeyword:append("-")
-vim.keymap.set("n", "gcr", ":%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i")
-vim.keymap.set("n", "gr", ":%s/<c-r><c-w>/<c-r><c-w>/g<c-f>$F/i")
+vim.keymap.set("n", "grc", ":%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i")
+vim.keymap.set("n", "gra", ":%s/<c-r><c-w>/<c-r><c-w>/g<c-f>$F/i")
 
 -- Indentation
 vim.opt.tabstop = 4
