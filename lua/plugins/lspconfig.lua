@@ -25,6 +25,7 @@ return {
                 "lua_ls",
                 "yamlls",
                 "pylsp",
+                "clangd",
             },
         })
         local lspconfig = require("lspconfig")
