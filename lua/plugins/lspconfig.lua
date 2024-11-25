@@ -3,6 +3,11 @@ vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", { no
 vim.api.nvim_set_keymap("n", "grs", "<cmd>lua vim.lsp.buf.rename()<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "ge", "<cmd>lua vim.diagnostic.setqflist()<CR>", { noremap = true, silent = true })
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "qf" },
+    command = [[nnoremap <buffer> <CR> <CR>:cclose<CR>]],
+})
 
 vim.diagnostic.config({
     virtual_text = false,
@@ -26,6 +31,8 @@ return {
                 "yamlls",
                 "pylsp",
                 "clangd",
+                "emmet_ls",
+                "ts_ls",
             },
         })
         local lspconfig = require("lspconfig")
