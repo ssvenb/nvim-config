@@ -8,6 +8,7 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
+		"hrsh7th/cmp-nvim-lsp-signature-help",
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -38,6 +39,7 @@ return {
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
+				{ name = "nvim_lsp_signature_help" },
 			}),
 		})
 	end,
