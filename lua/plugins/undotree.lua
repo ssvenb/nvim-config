@@ -1,4 +1,4 @@
-vim.keymap.set("n", "ü", vim.cmd.UndotreeToggle)
+vim.keymap.set("n", "gu", vim.cmd.UndotreeToggle)
 
 return {
 	"mbbill/undotree",

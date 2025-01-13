@@ -36,8 +36,8 @@ function toggle_git()
 	end
 end
 
-vim.keymap.set("n", "ä", toggle_diff)
-vim.keymap.set("n", "ß", toggle_git)
+vim.keymap.set("n", "gdd", toggle_diff)
+vim.keymap.set("n", "git", toggle_git)
 
 return {
 	"tpope/vim-fugitive",
