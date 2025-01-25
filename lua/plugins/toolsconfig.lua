@@ -24,6 +24,9 @@ return {
 				null_ls.builtins.formatting.black.with({
 					extra_args = { "--line-length", "120" },
 				}),
+				null_ls.builtins.formatting.prettier.with({
+					extra_args = { "--tab-width", "4" },
+				}),
 				null_ls.builtins.formatting.clang_format.with({
 					extra_args = { "--style", "{BasedOnStyle: llvm, IndentWidth: 4}" },
 				}),
