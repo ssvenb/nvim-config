@@ -22,7 +22,7 @@ return {
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.black.with({
-					extra_args = { "--line-length", "120", "--style", "{BasedOnStyle: llvm, IndentWidth: 4}" },
+					extra_args = { "--line-length", "120" },
 				}),
 				null_ls.builtins.formatting.clang_format.with({
 					extra_args = { "--style", "{BasedOnStyle: llvm, IndentWidth: 4}" },

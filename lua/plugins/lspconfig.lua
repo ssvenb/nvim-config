@@ -10,6 +10,7 @@ vim.diagnostic.config({
 vim.o.updatetime = 250
 return {
 	"neovim/nvim-lspconfig",
+	lazy = false,
 	dependencies = {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig",
@@ -63,6 +64,7 @@ return {
 							},
 						},
 					},
+					cmd = server_name == "clangd" and { "clangd", "--clang-tidy", "--fallback-style=none" } or nil,
 				})
 			end,
 		})
