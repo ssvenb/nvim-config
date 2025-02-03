@@ -24,18 +24,12 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
-vim.keymap.set("n", "<left>", "<<")
-vim.keymap.set("n", "<right>", ">>")
-vim.keymap.set("v", "<left>", "<")
-vim.keymap.set("v", "<right>", ">")
 
 -- Search
 vim.opt.incsearch = true
 vim.opt.hlsearch = true
 
 -- Arrow Keys
-vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 vim.keymap.set("i", "<C-j>", "<down>")
 vim.keymap.set("i", "<C-k>", "<up>")
 vim.keymap.set("i", "<C-l>", "<right>")
